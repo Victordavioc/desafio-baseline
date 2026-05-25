@@ -16,7 +16,7 @@ def carregar_config(caminho: str) -> dict:
 
     for linha in arquivo.read_text(encoding="utf-8").splitlines():
         linha = linha.strip()
-        if not linha or linha.startswith("#"):
+        if not linha and linha.startswith("#"):
             continue
         if "=" in linha:
             chave, valor = linha.split("=", 1)
